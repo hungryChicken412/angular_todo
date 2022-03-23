@@ -20,9 +20,7 @@ export class ListViewComponent{
         this.messages$ = this.store.select('todos');
     }
 
-    deleteListItem(index: number){
-        this.store.dispatch({type: 'TODO_REMOVE', index});
-    }
+    
     removeAll(){
         this.store.dispatch({type: 'REMOVE'});
     }
