@@ -1,16 +1,26 @@
+
+
 <div class="Listholder">
     <h1>My Lists</h1>
-    <mat-accordion *ngFor="let todo of listOfTodos; let i = index">
+    <mat-accordion *ngFor="let i of messages$ | async ">
         <mat-expansion-panel>
             <mat-expansion-panel-header>
-                <h1>{{todo.listName}}</h1>
+                <h1>{{ i['todos'][0]['listName'] }}</h1>
             </mat-expansion-panel-header>
             <mat-selection-list #shoes>
-                <mat-list-option *ngFor="let item of todo.content">
-                  {{item.title}}
+                <mat-list-option *ngFor="let item of i['todos'][0]['content']">
+                    {{item.title}}
                 </mat-list-option>
               </mat-selection-list>
               <button mat-raised-button color="accent" (click)="deleteListItem(i)">Delete</button>
         </mat-expansion-panel>
     </mat-accordion>
+    <button style="margin-top:20px;" mat-raised-button color="accent" (click)="removeAll()">Remove All</button>
 </div>
+
+
+
+
+
+
+

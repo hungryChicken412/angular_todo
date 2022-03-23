@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PostCreateComponent } from './posts/post-create/post-create.component';
-import { PostListComponent } from './posts/post-list/post-list.component';
+import { ListCreateComponent } from './Components/list-create/list-create.component';
+import { ListViewComponent } from './Components/list-view/list-view.component';
 
 const routes: Routes = [
-  { path: 'todos', component: PostListComponent },
-  { path: 'createNew', component: PostCreateComponent },
+  { path: 'todos', component: ListViewComponent },
+  { path: 'createNew', component: ListCreateComponent },
 ];
 
 @NgModule({

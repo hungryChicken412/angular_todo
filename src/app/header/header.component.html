@@ -4,28 +4,34 @@
 <main>
 <mat-card>
     <h1>Welcome To The To-Dos App</h1>
+    
     <mat-grid-list cols="2" role="list">
         <mat-grid-tile role="listitem">
             <img width="50%"src="/assets/logo.png" alt="avatar" class="avatar">
         </mat-grid-tile>
         <mat-grid-tile role="listitem">
-            <nav *ngIf="true; else loginBlock">
+            <nav *ngIf="loggedin; else loginBlock">
                 <h1>Select A Page To Visit</h1>
                 <mat-list role="list">
                     <mat-list-item><a mat-raised-button color="primary"routerLink="/todos" routerLinkActive="active">My Lists</a></mat-list-item>
                     <mat-list-item><a mat-raised-button color="primary"routerLink="/createNew" routerLinkActive="active">Create A New List</a></mat-list-item>
+                    <button mat-raised-button color="accent" (click)="logout()">Logout</button>
                   </mat-list>
 
             </nav>
             <ng-template #loginBlock>
+                
                 <form>
                     <mat-form-field>
-                        <input matInput placeholder="username">
+                        <input matInput name="username"(value)="userInput" placeholder="username"[(ngModel)]="userInput">
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput placeholder="password">
+                        <input matInput type="password" name="password" (value)="passwordInput"placeholder="password" [(ngModel)]="passwordInput">
                     </mat-form-field>
-                    <button mat-raised-button color="primary">Login</button>
+                    <p style="color:red;">{{error}}</p>
+                    <p>Username: admin</p>
+                    <p>Password: admin</p>
+                    <button mat-raised-button color="primary" (click)="loginUser()">Login</button>
                 </form>
             </ng-template>
         </mat-grid-tile>
