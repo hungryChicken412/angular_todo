@@ -1,0 +1,13 @@
+.Listholder{
+    width: 80%;
+    padding:20px;
+    margin:auto;
+    margin-top: 20px;
+}
+mat-accordion{
+    margin:20px;
+}
+mat-expansion-panel-header{
+    padding-top:20px;
+    color:rgb(255, 100, 126);
+}

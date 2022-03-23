@@ -1,0 +1,18 @@
+
+<mat-card>
+    <h1>Create A Post</h1>
+    <mat-form-field>
+        <input matInput type="text" placeholder="List Title" [(ngModel)]="newListTitle">
+    </mat-form-field>
+    <mat-card style="margin-bottom:10px;" *ngIf="newList.content[0].title !== '' ">
+        <h3 *ngFor="let task of newList.content">{{task.title}}</h3>
+    </mat-card>
+    <mat-card>
+        <mat-form-field>
+            <input matInput  type="text" placeholder="Task" [(ngModel)]="newTaskTitle">
+        </mat-form-field>
+        <button mat-raised-button color="accent" (click)="AddNewTask()">Add Task</button>
+    </mat-card>
+    <button mat-raised-button color="accent" (click)="CreateNewList()">Save Post</button>
+</mat-card>
+

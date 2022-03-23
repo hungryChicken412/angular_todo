@@ -1,0 +1,16 @@
+<div class="Listholder">
+    <h1>My Lists</h1>
+    <mat-accordion *ngFor="let todo of listOfTodos; let i = index">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <h1>{{todo.listName}}</h1>
+            </mat-expansion-panel-header>
+            <mat-selection-list #shoes>
+                <mat-list-option *ngFor="let item of todo.content">
+                  {{item.title}}
+                </mat-list-option>
+              </mat-selection-list>
+              <button mat-raised-button color="accent" (click)="deleteListItem(i)">Delete</button>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

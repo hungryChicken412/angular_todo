@@ -1,0 +1,34 @@
+<mat-toolbar class="navbar">
+    My Todo App
+</mat-toolbar>
+<main>
+<mat-card>
+    <h1>Welcome To The To-Dos App</h1>
+    <mat-grid-list cols="2" role="list">
+        <mat-grid-tile role="listitem">
+            <img width="50%"src="/assets/logo.png" alt="avatar" class="avatar">
+        </mat-grid-tile>
+        <mat-grid-tile role="listitem">
+            <nav *ngIf="true; else loginBlock">
+                <h1>Select A Page To Visit</h1>
+                <mat-list role="list">
+                    <mat-list-item><a mat-raised-button color="primary"routerLink="/todos" routerLinkActive="active">My Lists</a></mat-list-item>
+                    <mat-list-item><a mat-raised-button color="primary"routerLink="/createNew" routerLinkActive="active">Create A New List</a></mat-list-item>
+                  </mat-list>
+
+            </nav>
+            <ng-template #loginBlock>
+                <form>
+                    <mat-form-field>
+                        <input matInput placeholder="username">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="password">
+                    </mat-form-field>
+                    <button mat-raised-button color="primary">Login</button>
+                </form>
+            </ng-template>
+        </mat-grid-tile>
+      </mat-grid-list>
+</mat-card>
+</main>
